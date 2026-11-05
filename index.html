@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>KOSPI200 선물 트레이닝</title>
+<title>KOSPI200 미니 선물 트레이닝</title>
 <style>
   :root{
     --bg:#080b12;
@@ -310,7 +310,7 @@
     <div class="brand">
       <div class="mark">K2</div>
       <div>
-        <h1>KOSPI200 선물 트레이닝</h1>
+        <h1>KOSPI200 미니 선물 트레이닝</h1>
         <p>1분봉 리플레이 · MA20 / WMA20 · 모의매매</p>
       </div>
     </div>
@@ -324,8 +324,8 @@
 
     <div class="head-actions">
       <label class="chk"><input type="checkbox" id="optHideDate" checked> 날짜 숨김</label>
-      <label class="chk" title="체크하면 진입·청산 각각 1틱(0.05pt)의 비용을 반영합니다"><input type="checkbox" id="optCost"> 비용 1틱</label>
-      <label class="sel" title="1계약 = 1pt당 250,000원">계약
+      <label class="chk" title="체크하면 진입·청산 각각 1틱(0.02pt, 1,000원)의 비용을 반영합니다"><input type="checkbox" id="optCost"> 비용 1틱</label>
+      <label class="sel" title="미니 코스피200 선물 · 1계약 = 1pt당 50,000원">계약
         <select id="optQty">
           <option value="1">1</option>
           <option value="2">2</option>
@@ -427,7 +427,7 @@
 
   <div class="footer-hint">
     <div><b>Space</b> / <b>→</b> 다음 1분 &nbsp;·&nbsp; <b>1</b> 롱 진입 &nbsp;<b>2</b> 롱 청산 &nbsp;<b>3</b> 숏 진입 &nbsp;<b>4</b> 숏 청산</div>
-    <div>체결가는 현재 1분봉 종가 · 1pt = 250,000원 &nbsp;·&nbsp; 08:45–15:30 KST</div>
+    <div>체결가는 현재 1분봉 종가 · 미니 1pt = 50,000원 · 1틱 = 0.02pt(1,000원) &nbsp;·&nbsp; 08:45–15:30 KST</div>
   </div>
 </div>
 
@@ -461,8 +461,8 @@
      DATA
      ========================================================= */
   const DATA = JSON.parse(document.getElementById('market-data').textContent);
-  const TICK = 0.05;
-  const MULT = 250000;
+  const TICK = 0.02;      // mini KOSPI200 futures tick = 0.02pt (1,000 KRW)
+  const MULT = 50000;     // mini KOSPI200 futures multiplier = 50,000 KRW per pt
   const PERIOD = 20;
   const PRELOAD = 75;
   const UP = '#ff5d5d';
